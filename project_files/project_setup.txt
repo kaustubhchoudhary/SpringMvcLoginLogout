@@ -1,0 +1,42 @@
+Step1: Change the username and password in spring-servlet.xml according to your credenetials
+
+Step2: Run the following queries
+
+create schema auth;
+
+use auth;
+
+create table users(
+id int primary key auto_increment, 
+name varchar(15), 
+username varchar(15), 
+password varchar(15));
+
+INSERT INTO users (name, username, password)
+VALUES ('Kaustubh', 'kaustubh', '12345');
+
+INSERT INTO users (name, username, password)
+VALUES ('Kaashvi', 'kaashvi', '1234');
+
+INSERT INTO users (name, username, password)
+VALUES ('Kinjal', 'kkinjal', '123');
+
+Project Explanation
+--------------------
+Run the project:
+1. Register: Set username and password
+2. Login: Use the username and password to login
+3. dashboard and profile are secure pages, they can be viewed only after login:
+Test: Start the app and without login, run the following requests:
+
+http://localhost:8080/SpringMvcLoginLogout/dashboard
+http://localhost:8080/SpringMvcLoginLogout/profile
+
+4. Login with proper credentials and you can see dashboard and profile pages
+5. Logout
+6. Try to press the back button after logout, you wont be able to open dashboard and profile page again
+
+
+
+
+
